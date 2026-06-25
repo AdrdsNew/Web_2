@@ -1,0 +1,56 @@
+# Dependências
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ambiente
+.env
+.env.local
+.env.development
+.env.production
+.env.*.local
+*.env
+!.env.example
+
+# Build e Outputs
+dist/
+build/
+.next/
+out/
+
+# Cache
+.cache/
+.vite/
+.turbo/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+
+# Testes e Cobertura
+coverage/
+cypress/videos/
+cypress/screenshots/
+.nyc_output/
+
+# Arquivos temporários e BD
+tmp/
+temp/
+*.db
+*.db-journal
