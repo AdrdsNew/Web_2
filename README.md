@@ -1,4 +1,4 @@
-# Projeto Full-Stack (React + Node.js)
+# Projeto de Inventário de Jogos (React + Node.js)
 
 Este é um projeto full-stack completo, estruturado em um único repositório dividido entre uma aplicação de cliente (frontend) e uma API RESTful (backend).
 
