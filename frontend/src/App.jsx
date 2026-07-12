@@ -14,7 +14,7 @@ const App = () => {
     const loggedUserJSON = window.localStorage.getItem('loggedItemAppUser')
     if (loggedUserJSON) {
       const user = JSON.parse(loggedUserJSON)
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+   
       setUser(user)
       itemService.setToken(user.token)
       itemService.getAll().then(initialItems => setItems(initialItems))
@@ -77,7 +77,7 @@ const App = () => {
         const returnedItem = await itemService.update(id, changedItem)
         setItems(items.map(i => i.id !== id ? i : returnedItem))
         notify.toast('Status atualizado!')
-      } catch { // 🛠️ CORRIGIDO: Removido o (e) não utilizado
+      } catch {
         notify.toast('Erro ao atualizar status', 'error')
       }
     }
