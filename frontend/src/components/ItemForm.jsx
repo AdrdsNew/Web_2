@@ -35,7 +35,7 @@ const ItemForm = ({ createItem }) => {
         <input name="category" style={styles.input} placeholder="Plataforma Jogada" required />
       </div>
       <div style={{display: 'flex', gap: '15px'}}>
-        {/* 🛠️ CORRIGIDO: Mudou de input para select com as 3 opções fixas */}
+  
         <select name="status" style={styles.input} required>
           <option value="Concluído com Platina">🏆 Concluído com Platina</option>
           <option value="Concluído sem Platina">🎮 Concluído sem Platina</option>
