@@ -30,7 +30,7 @@ const App = () => {
       const initialItems = await itemService.getAll()
       setItems(initialItems)
       notify.toast(`Bem-vindo, ${user.name}!`)
-    } catch { // 🛠️ CORRIGIDO: Removido o (e) não utilizado
+    } catch { 
       notify.toast('Usuário ou senha inválidos', 'error') 
     }
   }
@@ -40,7 +40,7 @@ const App = () => {
       await userService.create(userObject)
       notify.toast('Conta criada! Agora você pode entrar.')
       return true
-    } catch (e) { // 🛠️ CORRIGIDO: Aqui mantemos o 'e' se a sua configuração usar o e.response
+    } catch (e) { 
       notify.toast(e.response?.data?.error || 'Erro ao criar conta', 'error')
       return false
     }
@@ -62,7 +62,7 @@ const App = () => {
       const returnedItem = await itemService.create(itemObject)
       setItems(items.concat(returnedItem))
       notify.toast('Item adicionado com sucesso!')
-    } catch { // 🛠️ CORRIGIDO: Removido o (e) não utilizado
+    } catch { 
       notify.toast('Erro ao adicionar item', 'error')
     }
   }
@@ -92,14 +92,14 @@ const App = () => {
         await itemService.remove(id)
         setItems(items.filter(i => i.id !== id))
         notify.toast('Item removido com sucesso!')
-      } catch (error) { // 🛠️ CORRIGIDO: Renomeado para 'error' para não dar conflito ou use se necessário
+      } catch (error) { 
         notify.toast(error.response?.data?.error || 'Não autorizado a apagar este item', 'error')
       }
     }
   }
 
   return (
-    // ... Seu bloco de return continua exatamente igual ...
+  
     <div style={{ fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif', backgroundColor: '#f4f6f9', minHeight: '100vh' }}>
       {user === null ? (
         <AuthForm handleLogin={handleLogin} handleSignup={handleSignup} />
@@ -140,10 +140,10 @@ const App = () => {
     backgroundColor: 'white', padding: '20px', borderRadius: '8px',
     boxShadow: '0 2px 8px rgba(0,0,0,0.04)', display: 'flex',
     justifyContent: 'space-between', alignItems: 'center',
-    // 🛠️ CORRIGIDO: Cores das bordas baseadas nos novos status de jogos
+   
     borderLeft: `5px solid ${
-      item.status === 'Concluído com Platina' ? '#28a745' : // Verde
-      item.status === 'Concluído sem Platina' ? '#ffc107' : '#dc3545' // Amarelo ou Vermelho (Abandonado)
+      item.status === 'Concluído com Platina' ? '#28a745' : 
+      item.status === 'Concluído sem Platina' ? '#ffc107' : '#dc3545' 
     }`
   }}>
     <div>
@@ -153,7 +153,7 @@ const App = () => {
         borderRadius: '4px', color: '#495057', fontWeight: 'bold'
       }}>{item.category}</span>
       
-      {/* 🛠️ CORRIGIDO: Cores de fundo e do texto dos badges atualizadas */}
+      
       <span style={{
         fontSize: '12px', marginLeft: '10px', padding: '4px 8px', borderRadius: '4px',
         fontWeight: 'bold',
