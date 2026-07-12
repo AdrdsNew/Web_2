@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-// Alerta de sucesso ou erro rápido (toast)
+
 const toast = (title, icon = "success") => {
   Swal.fire({
     title,
@@ -27,7 +27,7 @@ const confirmLogout = async () => {
   return result.isConfirmed;
 };
 
-// Confirmação para deletar
+
 const confirmDelete = async (itemName) => {
   const result = await Swal.fire({
     title: "Tem certeza?",
@@ -42,15 +42,12 @@ const confirmDelete = async (itemName) => {
   return result.isConfirmed;
 };
 
-// Caixa de entrada para atualizar status
-// ... restante do arquivo notify.js igual acima
 
-// Caixa de entrada para atualizar status do jogo
 const promptStatus = async (currentStatus) => {
   const { value: newStatus } = await Swal.fire({
     title: "Atualizar Status do Jogo",
     input: "select",
-    // 🛠️ CORRIGIDO: Novas opções de status para os Jogos
+    
     inputOptions: {
       "Concluído com Platina": "🏆 Concluído com Platina",
       "Concluído sem Platina": "🎮 Concluído sem Platina",
